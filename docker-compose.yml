@@ -1,0 +1,11 @@
+nginx:
+  image: jsaunders/nginxdk
+  links:
+    - paywall:auth
+  ports:
+    - 80:80
+    - 443:443
+paywall:
+  image: jsaunders/paywallwsgi
+  volumes:
+    - paywall:home/docker/code/paywall/
